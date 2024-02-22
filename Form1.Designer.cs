@@ -45,6 +45,7 @@ namespace ListasPersonas
             this.BtnBorrar = new System.Windows.Forms.Button();
             this.BtnDecendente = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.BtnLeer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,11 +190,22 @@ namespace ListasPersonas
             this.BtnGuardar.UseVisualStyleBackColor = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // BtnLeer
+            // 
+            this.BtnLeer.Location = new System.Drawing.Point(327, 135);
+            this.BtnLeer.Name = "BtnLeer";
+            this.BtnLeer.Size = new System.Drawing.Size(75, 23);
+            this.BtnLeer.TabIndex = 16;
+            this.BtnLeer.Text = "Leer";
+            this.BtnLeer.UseVisualStyleBackColor = true;
+            this.BtnLeer.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnLeer);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnDecendente);
             this.Controls.Add(this.BtnBorrar);
@@ -236,6 +248,7 @@ namespace ListasPersonas
         private System.Windows.Forms.Button BtnBorrar;
         private System.Windows.Forms.Button BtnDecendente;
         private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button BtnLeer;
     }
 }
 

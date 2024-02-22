@@ -84,21 +84,40 @@ namespace ListasPersonas
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            FileStream stream =new  FileStream("personas.txt", FileMode.OpenOrCreate );
+            FileStream stream =new  FileStream("personas.txt", FileMode.OpenOrCreate, FileAccess.Write );
             StreamWriter writer = new StreamWriter(stream);
             for(int i = 0; i<personas.Count; i++)
             {
                 writer.WriteLine(personas[i].Dpi);
                 writer.WriteLine(personas[i].Nombre);
                 writer.WriteLine(personas[i].Apellido);
-                writer.WriteLine(personas[i].FechaNacimiento);
-
-
-
-
+                writer.WriteLine(personas[i].FechaNacimiento.ToShortDateString());
             }
             writer.Close();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string fileName = "personas.txt";
+
+            FileStream stream = new FileStream(fileName , FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            while(reader.Peek() > -1)
+            {
+                persona persona = new persona();
+
+                persona.Dpi = reader.ReadLine();
+                persona.Nombre = reader.ReadLine();
+                persona.Apellido = reader.ReadLine();
+                persona.FechaNacimiento = Convert.ToDateTime(reader.ReadLine()) ;
+
+                personas.Add(persona);
+               
+            }
+           // writer.Close();
+            Mostrar();
         }
     }
 }
